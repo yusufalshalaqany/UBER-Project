@@ -1,0 +1,40 @@
+# 1 - Import Pandas
+import pandas as pd
+
+# 2 - Import Uber Dataset Dataset & Read it
+df = pd.read_csv("UBERDataset.csv")
+df.info()
+pd.set_option("display.max_columns", None) 
+df.head(20)
+
+# 3 - Check Duplicated Values
+print(df.duplicated().sum())
+
+# 4 - Check Null Values
+print(df.isnull().sum())
+
+# 5 - Fill Null Values with A Suitable Values
+df.fillna({"STOP":"Unknown"}, inplace = True)
+df.fillna({"PURPOSE":"Other"}, inplace = True)
+
+# 6 - Get Outliers then Fill Null Values with A Suitable Values with 2 ways
+q1 = df["DRIVER_RATING"].quantile(0.25)
+q3 = df["DRIVER_RATING"].quantile(0.75)
+
+iqr = q3 - q1
+
+lower_bond = q1 - (1.5 * iqr)
+upper_bond = q3 + (1.5 * iqr)
+
+outliers = df[((df["DRIVER_RATING"] < lower_bond) | (df["DRIVER_RATING"] > upper_bond))]
+
+outliers.count()
+
+# 1st Way: Fill Null Values with Median
+print(df["DRIVER_RATING"].median())
+df.fillna({"DRIVER_RATING":df["DRIVER_RATING"].median()}, inplace = True)
+
+# 2nd Way: Remove Null Values with Update Dataframe Range
+df = df[((df["DRIVER_RATING"] > lower_bond) & (df["DRIVER_RATING"] < upper_bond))]
+
+df.to_csv('Cleaned_uber_dataset.csv', index=False)
