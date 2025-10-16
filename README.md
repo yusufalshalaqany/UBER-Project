@@ -31,7 +31,7 @@ UBER Dataset: The primary dataset used for this analysis is the "UBERDataset.csv
 
 ### Tools
 
-1. Applications
+1 - Applications
 - Anaconda (Jupyter Notebook) - Data Exploration and Cleaning by Python/Pandas
   - [Download here](https://www.anaconda.com/)
 - PowerBI - Creating reports
@@ -39,7 +39,7 @@ UBER Dataset: The primary dataset used for this analysis is the "UBERDataset.csv
 
  <br />
   
-2. Desing 
+2 - Desing 
 - [Figma](https://www.figma.com): Help me to create an organized background for dashboard
 
  <br />
