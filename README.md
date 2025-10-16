@@ -24,7 +24,7 @@ This data analysis project aims to provide insights about UBER trips and perform
 
 ### Data Sources
 
-UBER Dataset: The primary dataset used for this analysis is the "UBERDataset.csv" file, containing detailed information about each flight made by every the carrier.
+UBER Dataset: The primary dataset used for this analysis is the "UBERDataset.csv" file, containing detailed information about each trip.
   - [Download from attachments](https://github.com/yusufalshalaqany/UBER-Project/blob/main/Data%20Source/UBERDataset.csv)
 
  <br />
