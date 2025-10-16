@@ -1,7 +1,0 @@
-let
-	StartDate = #date(2020, 01, 01),
-	EndDate = #date(2025, 04, 03),
-	NumberOfDays = Duration.Days(EndDate - StartDate) + 1,
-	Dates = List.Dates(StartDate, NumberOfDays, #duration(1, 0, 0, 0))
-in
-	Dates
